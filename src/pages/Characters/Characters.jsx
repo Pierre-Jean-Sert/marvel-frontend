@@ -11,6 +11,7 @@ import "./characters.css";
 
 //! Libraries import
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 //! Hooks import
 import { useState, useEffect } from "react";
@@ -29,9 +30,9 @@ function Characters() {
 
   //useEffect to recover data from backend
   useEffect(() => {
+    //
     const fetchData = async () => {
       //
-
       try {
         // Axios request
         const response = await axios.get(url);
@@ -40,7 +41,7 @@ function Characters() {
         setData(response.data);
 
         // Paging constructor
-        const pageNumber = Math.ceil(data.count / 100);
+        const pageNumber = Math.ceil(response.data.count / 100);
         const newTab = [...page];
         newTab[1] = pageNumber;
         setPage(newTab);
@@ -61,65 +62,65 @@ function Characters() {
   // Return
   return (
     <>
-      {isLoading ? (
-        <p>En cours de chargement...</p>
-      ) : (
-        <main>
+      <main className="characters-main">
+        {/* Title and search bar */}
+        <section className="characters-header-section">
+          <h2>MARVEL CHARACTERS</h2>
+        </section>
+
+        {isLoading ? (
+          <p>En cours de chargement...</p>
+        ) : (
           <div className="container">
-            {/* Title and search bar */}
-            <section className="header-section">
-              <h2>Characters</h2>
-              <div className="search">
-                <i className="fa-solid fa-magnifying-glass"></i>
-                <input
-                  id="search"
-                  type="text"
-                  placeholder="SEARCH"
-                  onChange={(event) => {
-                    setSearch(event.target.value);
-                  }}
-                  value={search}
-                ></input>
-              </div>
-            </section>
+            <section className="characters-result-section">
+              {/* Paging and search */}
+              <div className="characters-paging">
+                <div className="characters-search">
+                  <i className="fa-solid fa-magnifying-glass"></i>
+                  <input
+                    id="search"
+                    type="text"
+                    placeholder="SEARCH"
+                    onChange={(event) => {
+                      setSearch(event.target.value);
+                    }}
+                    value={search}
+                  ></input>
+                </div>
 
-            <section className="result-section">
-              {/* Paging */}
-              <div className="page-buttons">
-                <button
-                  onClick={() => {
-                    if (page[0] > 1) {
-                      // setPage
-                      const newTab = [...page];
-                      newTab[0] = newTab[0] - 1;
-                      newTab[2] = (newTab[0] - 1) * 100;
-                      console.log(newTab[2]);
-
-                      setPage(newTab);
-                    }
-                  }}
-                >
-                  Previous
-                </button>
-                <p>Page {page[0]}</p>
-                <button
-                  onClick={() => {
-                    if (page[0] < page[1]) {
-                      // setPage
-                      const newTab = [...page];
-                      newTab[0] = newTab[0] + 1;
-                      newTab[2] = (newTab[0] - 1) * 100;
-                      console.log(newTab[2]);
-                      setPage(newTab);
-                    }
-                  }}
-                >
-                  Next
-                </button>
+                <div className="characters-buttons">
+                  <button
+                    onClick={() => {
+                      if (page[0] > 1) {
+                        // setPage
+                        const newTab = [...page];
+                        newTab[0] = newTab[0] - 1;
+                        newTab[2] = (newTab[0] - 1) * 100;
+                        setPage(newTab);
+                      }
+                    }}
+                  >
+                    Previous
+                  </button>
+                  <p>Page {page[0]}</p>
+                  <button
+                    onClick={() => {
+                      if (page[0] < page[1]) {
+                        // setPage
+                        const newTab = [...page];
+                        newTab[0] = newTab[0] + 1;
+                        newTab[2] = (newTab[0] - 1) * 100;
+                        setPage(newTab);
+                      }
+                    }}
+                  >
+                    Next
+                  </button>
+                </div>
               </div>
 
               {/* Characters */}
-              <div className="character-list">
+              <div className="characters-list">
                 {data.results.map((character, index) => {
                   //
                   // Img URL constructor ; size = portrait_fantastic
@@ -130,25 +131,42 @@ function Characters() {
                     "." +
                     character.thumbnail.extension;
 
+                  const imgSrc2 =
+                    character.thumbnail.path +
+                    "/" +
+                    "standard_fantastic" +
+                    "." +
+                    character.thumbnail.extension;
+
                   //Return
                   return (
                     <>
-                      <div className="character-sheet" key={index}>
-                        <img key={imgSrc} src={imgSrc} alt={character.name} />
-                        <div className="character-description">
-                          <p className="character-name" key={character.name}>
-                            {character.name}
-                          </p>
+                      <Link
+                        to="/character"
+                        state={{
+                          characterId: character._id,
+                          characterDescription: character.description,
+                          characterName: character.name,
+                          characterImg: imgSrc2,
+                        }}
+                      >
+                        <div className="characters-sheet" key={index}>
+                          <img key={imgSrc} src={imgSrc} alt={character.name} />
+                          <div className="characters-description">
+                            <p className="characters-name" key={character.name}>
+                              {character.name}
+                            </p>
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                     </>
                   );
                 })}
               </div>
             </section>
           </div>
-        </main>
-      )}
+        )}
+      </main>
     </>
   );
 }

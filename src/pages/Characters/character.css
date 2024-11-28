@@ -1,0 +1,113 @@
+/*
+/* CHARACTERS CSS */
+
+.character-header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+
+  height: 320px;
+
+  background-color: black;
+}
+
+.character-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.character-description {
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+.character-description > p {
+  width: 600px;
+
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+/* -------------------------------------------------------------------- */
+
+.character-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../assets/character-background.jpg");
+  background-attachment: fixed;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+
+  min-height: 600px;
+  padding: 20px;
+}
+
+.character-list {
+  display: flex;
+  align-items: center;
+
+  overflow: scroll;
+  gap: 20px;
+}
+
+.character-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.character-bloc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  align-items: center;
+
+  width: 300px;
+  height: 450px;
+  padding: 15px;
+
+  background-color: white;
+  color: black;
+
+  border-radius: 10px;
+}
+
+.character-bloc > h3 {
+  text-align: center;
+}
+
+.character-bloc > p {
+  height: 100px;
+  overflow-y: hidden;
+  text-align: justify;
+
+  font-size: 12px;
+}
+
+/* .character-bloc > img {
+  object-fit: cover;
+}
+
+.character-bloc > h3 {
+  text-align: center;
+}
+
+.character-bloc > p {
+  overflow-y: hidden;
+
+  font-size: 12px;
+  max-height: 100px;
+  max-width: 200px;
+  padding: 5px;
+  text-align: justify;
+} */

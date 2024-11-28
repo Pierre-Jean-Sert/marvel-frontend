@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //! Pages import
 import Home from "./pages/Home/Home";
 import Characters from "./pages/Characters/Characters";
+import Character from "./pages/Characters/Character";
 
 //! Components import
 import Header from "./components/Header/Header";
@@ -40,6 +41,9 @@ function App() {
 
           {/* CHARACTERS */}
           <Route path="/characters" element={<Characters></Characters>}></Route>
+
+          {/* CHARACTER */}
+          <Route path="/character" element={<Character></Character>}></Route>
         </Routes>
       </Router>
     </>
