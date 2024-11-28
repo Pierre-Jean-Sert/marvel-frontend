@@ -16,6 +16,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Characters from "./pages/Characters/Characters";
 import Character from "./pages/Characters/Character";
+import Comics from "./pages/Comics/Comics";
 
 //! Components import
 import Header from "./components/Header/Header";
@@ -25,7 +26,6 @@ import Header from "./components/Header/Header";
 //* APP FUNCTION
 function App() {
   //
-  // Shared states
 
   // Return
   return (
@@ -44,6 +44,9 @@ function App() {
 
           {/* CHARACTER */}
           <Route path="/character" element={<Character></Character>}></Route>
+
+          {/* COMICS */}
+          <Route path="/comics" element={<Comics></Comics>}></Route>
         </Routes>
       </Router>
     </>

@@ -3,7 +3,7 @@
 
 .characters-main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../assets/characters-background.jpg");
+    url("../../assets/page-background.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,12 +23,20 @@
   height: 320px;
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../assets/title-background.jpg");
+    url("../../assets/characters-header-background.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin: 0;
+}
+
+.characters-header-section > h2 {
+  background-color: white;
+  color: #070707;
+
+  padding: 15px;
+  border-radius: 8px;
 }
 
 /* -------------------------------------------------------------------- */

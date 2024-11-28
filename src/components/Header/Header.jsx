@@ -38,10 +38,11 @@ function Header() {
       </Link>
 
       {/* Comics */}
-      <div className="special">
-        {" "}
-        <p>Comics</p>
-      </div>
+      <Link to="/comics">
+        <div className="special">
+          <p>Comics</p>
+        </div>
+      </Link>
 
       {/* Logo */}
       <div>
