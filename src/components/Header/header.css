@@ -1,0 +1,64 @@
+/*
+/* HEADER CSS */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+
+  padding: 20px 0px 20px 0px;
+  margin-bottom: 80px;
+
+  background-color: #ed3237;
+
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.special {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+
+  cursor: pointer;
+}
+
+.special:hover {
+  border-bottom: solid 1px white;
+}
+
+header > div > img {
+  height: 50px;
+}
+
+.connection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.connection > button {
+  height: 40px;
+  width: 100px;
+
+  border-radius: 5px;
+  border: solid 2px white;
+
+  background-color: transparent;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 300;
+
+  cursor: pointer;
+}
+
+.connection > button:hover {
+  background-color: white;
+  color: #ed3237;
+
+  font-weight: 400;
+}

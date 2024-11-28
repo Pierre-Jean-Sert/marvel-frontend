@@ -1,0 +1,33 @@
+/*
+/* GLOBAL CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "M PLUS 1", serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+body {
+  background-color: #070707;
+}
+
+a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Utilise la couleur du texte environnant */
+}
+
+.container {
+  width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+}

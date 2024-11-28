@@ -1,0 +1,7 @@
+/*
+
+* MARVEL - Backend
+
+* Characters page
+
+*/
