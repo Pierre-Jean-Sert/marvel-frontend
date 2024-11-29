@@ -50,9 +50,11 @@ function Header() {
       </div>
 
       {/* Favorites */}
-      <div className="special">
-        <p>Favorites</p>
-      </div>
+      <Link to="/favorites">
+        <div className="special">
+          <p>Favorites</p>
+        </div>{" "}
+      </Link>
 
       {/* Signup and Login */}
       <div className="connection">

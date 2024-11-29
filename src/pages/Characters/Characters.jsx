@@ -26,7 +26,7 @@ function Characters() {
   const [page, setPage] = useState([1, 0, 0, 100]); // [page ; maxpage ; skip ; limit]
 
   // URL constructor
-  const url = `http://localhost:3000/characters?limit=${page[3]}&skip=${page[2]}&name=${search}`;
+  const url = `https://site--marvel-backend--zs7p5ywqkq9f.code.run/characters?limit=${page[3]}&skip=${page[2]}&name=${search}`;
 
   //useEffect to recover data from backend
   useEffect(() => {

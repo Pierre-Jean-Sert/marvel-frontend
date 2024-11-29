@@ -28,7 +28,7 @@ function Character() {
   const [isLoading, setIsLoading] = useState(true);
 
   // URL constructor
-  const url = `http://localhost:3000/comics/${characterId}`;
+  const url = `https://site--marvel-backend--zs7p5ywqkq9f.code.run/comics/${characterId}`;
 
   //useEffect to recover data from backend
   useEffect(() => {

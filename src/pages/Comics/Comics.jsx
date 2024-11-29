@@ -11,12 +11,11 @@ import "./comics.css";
 
 //! Libraries import
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 //! Hooks import
 import { useState, useEffect } from "react";
 
-function Comics() {
+function Comics({ comicsFav, setComicsFav }) {
   //
 
   //States
@@ -26,7 +25,7 @@ function Comics() {
   const [page, setPage] = useState([1, 0, 0, 100]); // [page ; maxpage ; skip ; limit]
 
   // URL constructor
-  const url = `http://localhost:3000/comics?limit=${page[3]}&skip=${page[2]}&title=${search}`;
+  const url = `https://site--marvel-backend--zs7p5ywqkq9f.code.run/comics?limit=${page[3]}&skip=${page[2]}&title=${search}`;
 
   //useEffect to recover data from backend
   useEffect(() => {
@@ -138,6 +137,10 @@ function Comics() {
                     <>
                       <div className="comics-bloc">
                         <img src={imgSrc} alt="Comic image" />
+                        {/* Bookmarks TODO */}
+                        <div className="bookmarks" onClick={() => {}}>
+                          <i className="fa-regular fa-bookmark"></i>
+                        </div>
                         <h3>{comic.title}</h3>
                         {comic.description && <p>{comic.description}</p>}
                       </div>
