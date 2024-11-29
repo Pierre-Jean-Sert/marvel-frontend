@@ -13,8 +13,8 @@
 }
 
 .character-img {
-  width: 250px;
-  height: 250px;
+  width: 225px;
+  height: 225px;
   border-radius: 50%;
 }
 
@@ -86,6 +86,8 @@
 
 .character-bloc > h3 {
   text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .character-bloc > p {

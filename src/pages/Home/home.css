@@ -18,10 +18,10 @@
   width: 300px;
   text-align: center;
 
-  padding: 15px;
+  padding: 12px;
   border-radius: 8px;
 
-  font-size: 30px;
+  font-size: 28px;
 }
 
 .home-title {
@@ -55,7 +55,7 @@
 }
 
 .comics-home-section:hover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../assets/splash.jpg");
 }
 
@@ -83,7 +83,7 @@
 }
 
 .characters-home-section:hover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../assets/splash.jpg");
 }
 
@@ -110,7 +110,7 @@
 }
 
 .favorites-home-section:hover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../../assets/splash.jpg");
   background-position: center;
 }
