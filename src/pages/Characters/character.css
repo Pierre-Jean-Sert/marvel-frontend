@@ -80,6 +80,8 @@
   color: black;
 
   border-radius: 10px;
+
+  cursor: w-resize;
 }
 
 .character-bloc > h3 {
@@ -92,22 +94,7 @@
   text-align: justify;
 
   font-size: 12px;
+
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-/* .character-bloc > img {
-  object-fit: cover;
-}
-
-.character-bloc > h3 {
-  text-align: center;
-}
-
-.character-bloc > p {
-  overflow-y: hidden;
-
-  font-size: 12px;
-  max-height: 100px;
-  max-width: 200px;
-  padding: 5px;
-  text-align: justify;
-} */

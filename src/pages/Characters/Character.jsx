@@ -98,9 +98,8 @@ function Character() {
                 return (
                   <>
                     <div className="character-bloc">
-                      <img src={imgSrc} alt={imgSrc} />
+                      <img src={imgSrc} alt="Character image" />
                       <h3>{comic.title}</h3>
-
                       {comic.description && <p>{comic.description}</p>}
                     </div>
                   </>

@@ -26,7 +26,7 @@ function Comics() {
   const [page, setPage] = useState([1, 0, 0, 100]); // [page ; maxpage ; skip ; limit]
 
   // URL constructor
-  const url = `http://localhost:3000/characters?limit=${page[3]}&skip=${page[2]}&name=${search}`;
+  const url = `http://localhost:3000/comics?limit=${page[3]}&skip=${page[2]}&title=${search}`;
 
   //useEffect to recover data from backend
   useEffect(() => {
@@ -121,46 +121,26 @@ function Comics() {
                 </div>
               </div>
 
-              {/* Characters */}
-              <div className="characters-list">
-                {data.results.map((character, index) => {
+              {/* Comics */}
+              <div className="comics-list">
+                {data.results.map((comic, index) => {
                   //
-                  // Img URL constructor ; size = portrait_fantastic
+                  // Img URL constructor ; size = standard_xlarge
                   const imgSrc =
-                    character.thumbnail.path +
+                    comic.thumbnail.path +
                     "/" +
-                    "portrait_fantastic" +
+                    "standard_xlarge" +
                     "." +
-                    character.thumbnail.extension;
-
-                  const imgSrc2 =
-                    character.thumbnail.path +
-                    "/" +
-                    "standard_fantastic" +
-                    "." +
-                    character.thumbnail.extension;
+                    comic.thumbnail.extension;
 
                   //Return
                   return (
                     <>
-                      <Link
-                        to="/character"
-                        state={{
-                          characterId: character._id,
-                          characterDescription: character.description,
-                          characterName: character.name,
-                          characterImg: imgSrc2,
-                        }}
-                      >
-                        <div className="characters-sheet" key={index}>
-                          <img key={imgSrc} src={imgSrc} alt={character.name} />
-                          <div className="characters-description">
-                            <p className="characters-name" key={character.name}>
-                              {character.name}
-                            </p>
-                          </div>
-                        </div>
-                      </Link>
+                      <div className="comics-bloc">
+                        <img src={imgSrc} alt="Comic image" />
+                        <h3>{comic.title}</h3>
+                        {comic.description && <p>{comic.description}</p>}
+                      </div>
                     </>
                   );
                 })}

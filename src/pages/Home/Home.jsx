@@ -7,7 +7,7 @@
 */
 
 function Home() {
-  return <p>Je suis la home</p>;
+  return <main></main>;
 }
 
 export default Home;
