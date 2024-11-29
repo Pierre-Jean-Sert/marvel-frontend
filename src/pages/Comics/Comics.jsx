@@ -15,7 +15,8 @@ import axios from "axios";
 //! Hooks import
 import { useState, useEffect } from "react";
 
-function Comics({ comicsFav, setComicsFav }) {
+//* COMICS FUNCTION
+function Comics() {
   //
 
   //States
@@ -122,7 +123,7 @@ function Comics({ comicsFav, setComicsFav }) {
 
               {/* Comics */}
               <div className="comics-list">
-                {data.results.map((comic, index) => {
+                {data.results.map((comic) => {
                   //
                   // Img URL constructor ; size = standard_xlarge
                   const imgSrc =
@@ -137,8 +138,8 @@ function Comics({ comicsFav, setComicsFav }) {
                     <>
                       <div className="comics-bloc">
                         <img src={imgSrc} alt="Comic image" />
-                        {/* Bookmarks TODO */}
-                        <div className="bookmarks" onClick={() => {}}>
+                        {/* Bookmarks */}
+                        <div className="bookmarks">
                           <i className="fa-regular fa-bookmark"></i>
                         </div>
                         <h3>{comic.title}</h3>

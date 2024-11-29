@@ -11,6 +11,7 @@ import "./App.css";
 
 //! Libraries import
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cookies from "js-cookie";
 
 //! Pages import
 import Home from "./pages/Home/Home";
@@ -28,8 +29,6 @@ import { useState } from "react";
 //* APP FUNCTION
 function App() {
   //
-  // Shared states
-  const [comicsFav, setComicsFav] = useState([]);
 
   // Return
   return (
@@ -44,15 +43,7 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
 
           {/* COMICS */}
-          <Route
-            path="/comics"
-            element={
-              <Comics
-                comicsFav={comicsFav}
-                setComicsFav={setComicsFav}
-              ></Comics>
-            }
-          ></Route>
+          <Route path="/comics" element={<Comics></Comics>}></Route>
 
           {/* CHARACTERS */}
           <Route path="/characters" element={<Characters></Characters>}></Route>

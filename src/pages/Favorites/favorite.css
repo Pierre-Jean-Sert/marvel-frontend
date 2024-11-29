@@ -1,0 +1,15 @@
+/*
+/* FAVORITES CSS */
+
+.favorites-main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../assets/favorites-background.jpg");
+
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+
+  height: 100vh;
+  padding: 20px;
+}
