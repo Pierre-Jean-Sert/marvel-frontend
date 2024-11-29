@@ -65,7 +65,7 @@ function Characters() {
       <main className="characters-main">
         {/* Title and search bar */}
         <section className="characters-header-section">
-          <h2>MARVEL CHARACTERS</h2>
+          <h2>CHARACTERS</h2>
         </section>
 
         {isLoading ? (

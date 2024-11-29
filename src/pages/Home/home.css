@@ -1,0 +1,116 @@
+/*
+/* HOME CSS */
+
+.home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.home-main h2 {
+  background-color: white;
+  color: #070707;
+
+  width: 300px;
+  text-align: center;
+
+  padding: 15px;
+  border-radius: 8px;
+
+  font-size: 30px;
+}
+
+.home-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* -------------------------------------------------------------------- */
+
+.comics-home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  width: 900px;
+  height: 220px;
+
+  border-radius: 8px;
+
+  background-image: url("../../assets/comics-header-background.jpg");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+
+  cursor: pointer;
+}
+
+.comics-home-section:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../../assets/splash.jpg");
+}
+
+/* -------------------------------------------------------------------- */
+
+.characters-home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  width: 900px;
+  height: 220px;
+
+  border-radius: 8px;
+
+  background-image: url("../../assets/characters-header-background.jpg");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+
+  cursor: pointer;
+}
+
+.characters-home-section:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../../assets/splash.jpg");
+}
+
+/* -------------------------------------------------------------------- */
+
+.favorites-home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  width: 900px;
+  height: 220px;
+
+  border-radius: 8px;
+
+  background-image: url("../../assets/character-background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+
+  cursor: pointer;
+}
+
+.favorites-home-section:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../../assets/splash.jpg");
+  background-position: center;
+}

@@ -65,7 +65,7 @@ function Comics() {
       <main className="comics-main">
         {/* Title and search bar */}
         <section className="comics-header-section">
-          <h2>MARVEL COMICS</h2>
+          <h2>COMICS</h2>
         </section>
 
         {/* A TRAITER */}

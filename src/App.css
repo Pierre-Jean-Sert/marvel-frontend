@@ -27,6 +27,11 @@ a {
   margin: auto;
 }
 
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
 h2 {
   font-size: 40px;
   font-weight: 700;
