@@ -63,7 +63,7 @@ function Characters() {
   return (
     <>
       <main className="characters-main">
-        {/* Title and search bar */}
+        {/* Title */}
         <section className="characters-header-section">
           <h2>CHARACTERS</h2>
         </section>

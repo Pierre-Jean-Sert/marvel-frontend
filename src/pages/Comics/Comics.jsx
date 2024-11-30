@@ -11,6 +11,7 @@ import "./comics.css";
 
 //! Libraries import
 import axios from "axios";
+import Cookies from "js-cookie";
 
 //! Hooks import
 import { useState, useEffect } from "react";
@@ -19,12 +20,30 @@ import { useState, useEffect } from "react";
 function Comics() {
   //
 
-  //States
+  //* States
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState([1, 0, 0, 100]); // [page ; maxpage ; skip ; limit]
+  const [bookmarkRefresh, setBookmarkRefresh] = useState(false);
 
+  //* Cookies management
+  // Get cookies or empty tab if
+  const comicBookmarks = Cookies.get("comicBookmarks")
+    ? JSON.parse(Cookies.get("comicBookmarks"))
+    : [];
+
+  //addToFavorites sub-function (for comics)
+  function addToFavorites(comicId) {
+    // Check if comic is already in cookies
+    if (!comicBookmarks.includes(comicId)) {
+      comicBookmarks.push(comicId);
+      Cookies.set("comicBookmarks", JSON.stringify(comicBookmarks));
+      setBookmarkRefresh(!bookmarkRefresh); // used to refresh page and therefore change the bookmarg image
+    }
+  }
+
+  //* Request
   // URL constructor
   const url = `https://site--marvel-backend--zs7p5ywqkq9f.code.run/comics?limit=${page[3]}&skip=${page[2]}&title=${search}`;
 
@@ -67,8 +86,6 @@ function Comics() {
         <section className="comics-header-section">
           <h2>COMICS</h2>
         </section>
-
-        {/* A TRAITER */}
 
         {isLoading ? (
           <p>En cours de chargement...</p>
@@ -138,9 +155,19 @@ function Comics() {
                     <>
                       <div className="comics-bloc">
                         <img src={imgSrc} alt="Comic image" />
+
                         {/* Bookmarks */}
-                        <div className="bookmarks">
-                          <i className="fa-regular fa-bookmark"></i>
+                        <div
+                          className="bookmarks"
+                          onClick={() => {
+                            addToFavorites(comic._id);
+                          }}
+                        >
+                          {comicBookmarks.includes(comic._id) ? (
+                            <i className="fa-solid fa-bookmark"></i>
+                          ) : (
+                            <i className="fa-regular fa-bookmark"></i>
+                          )}
                         </div>
                         <h3>{comic.title}</h3>
                         {comic.description && <p>{comic.description}</p>}
