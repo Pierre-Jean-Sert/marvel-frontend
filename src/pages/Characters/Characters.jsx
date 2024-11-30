@@ -12,6 +12,7 @@ import "./characters.css";
 //! Libraries import
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 //! Hooks import
 import { useState, useEffect } from "react";
@@ -24,6 +25,25 @@ function Characters() {
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState([1, 0, 0, 100]); // [page ; maxpage ; skip ; limit]
+  const [bookmarkRefresh, setBookmarkRefresh] = useState(false);
+
+  //* Cookies management
+  // Get cookies or empty tab if
+  const characterBookmarks = Cookies.get("characterBookmarks")
+    ? JSON.parse(Cookies.get("characterBookmarks"))
+    : [];
+
+  console.log(characterBookmarks);
+
+  //addToFavorites sub-function (for comics)
+  function addToFavorites(characterId) {
+    // Check if comic is already in cookies
+    if (!characterBookmarks.includes(characterId)) {
+      characterBookmarks.push(characterId);
+      Cookies.set("characterBookmarks", JSON.stringify(characterBookmarks));
+      setBookmarkRefresh(!bookmarkRefresh); // used to refresh page and therefore change the bookmarg image
+    }
+  }
 
   // URL constructor
   const url = `https://site--marvel-backend--zs7p5ywqkq9f.code.run/characters?limit=${page[3]}&skip=${page[2]}&name=${search}`;
@@ -141,24 +161,39 @@ function Characters() {
                   //Return
                   return (
                     <>
-                      <Link
-                        to="/character"
-                        state={{
-                          characterId: character._id,
-                          characterDescription: character.description,
-                          characterName: character.name,
-                          characterImg: imgSrc2,
-                        }}
-                      >
-                        <div className="characters-sheet" key={index}>
-                          <img key={imgSrc} src={imgSrc} alt={character.name} />
+                      <div className="characters-sheet" key={index}>
+                        <img key={imgSrc} src={imgSrc} alt={character.name} />
+
+                        {/* Bookmarks */}
+                        <div
+                          className="characters-bookmarks"
+                          onClick={() => {
+                            addToFavorites(character._id);
+                          }}
+                        >
+                          {characterBookmarks.includes(character._id) ? (
+                            <i className="fa-solid fa-bookmark"></i>
+                          ) : (
+                            <i className="fa-regular fa-bookmark"></i>
+                          )}
+                        </div>
+
+                        <Link
+                          to="/character"
+                          state={{
+                            characterId: character._id,
+                            characterDescription: character.description,
+                            characterName: character.name,
+                            characterImg: imgSrc2,
+                          }}
+                        >
                           <div className="characters-description">
                             <p className="characters-name" key={character.name}>
                               {character.name}
                             </p>
                           </div>
-                        </div>
-                      </Link>
+                        </Link>
+                      </div>
                     </>
                   );
                 })}
