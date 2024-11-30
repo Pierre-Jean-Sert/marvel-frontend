@@ -66,7 +66,7 @@ function Favorites() {
           characterUrls.map((url) => axios.get(url))
         );
 
-        // Ge dat from request
+        // Get data from request
         const comicResults = comicResponses.map((response) => response.data);
 
         const characterResults = characterResponses.map(

@@ -28,7 +28,7 @@ function Comics() {
   const [bookmarkRefresh, setBookmarkRefresh] = useState(false);
 
   //* Cookies management
-  // Get cookies or empty tab if
+  // Get cookies or empty tab
   const comicBookmarks = Cookies.get("comicBookmarks")
     ? JSON.parse(Cookies.get("comicBookmarks"))
     : [];
@@ -39,7 +39,7 @@ function Comics() {
     if (!comicBookmarks.includes(comicId)) {
       comicBookmarks.push(comicId);
       Cookies.set("comicBookmarks", JSON.stringify(comicBookmarks));
-      setBookmarkRefresh(!bookmarkRefresh); // used to refresh page and therefore change the bookmarg image
+      setBookmarkRefresh(!bookmarkRefresh); // used to refresh page and therefore change the bookmark image
     }
   }
 

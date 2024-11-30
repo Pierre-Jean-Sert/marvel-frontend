@@ -11,20 +11,16 @@ import "./App.css";
 
 //! Libraries import
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Cookies from "js-cookie";
 
 //! Pages import
 import Home from "./pages/Home/Home";
+import Comics from "./pages/Comics/Comics";
 import Characters from "./pages/Characters/Characters";
 import Character from "./pages/Characters/Character";
-import Comics from "./pages/Comics/Comics";
 import Favorites from "./pages/Favorites/Favorites";
 
 //! Components import
 import Header from "./components/Header/Header";
-
-//! Hooks import
-import { useState } from "react";
 
 //* APP FUNCTION
 function App() {

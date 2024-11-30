@@ -33,15 +33,13 @@ function Characters() {
     ? JSON.parse(Cookies.get("characterBookmarks"))
     : [];
 
-  console.log(characterBookmarks);
-
   //addToFavorites sub-function (for comics)
   function addToFavorites(characterId) {
     // Check if comic is already in cookies
     if (!characterBookmarks.includes(characterId)) {
       characterBookmarks.push(characterId);
       Cookies.set("characterBookmarks", JSON.stringify(characterBookmarks));
-      setBookmarkRefresh(!bookmarkRefresh); // used to refresh page and therefore change the bookmarg image
+      setBookmarkRefresh(!bookmarkRefresh); // used to refresh page and therefore change the bookmark image
     }
   }
 
