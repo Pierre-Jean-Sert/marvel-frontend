@@ -57,7 +57,7 @@ function Favorites() {
       );
 
       try {
-        // Effectuer une requête pour chaque URL
+        // Axios request for each url
         const comicResponses = await Promise.all(
           comicUrls.map((url) => axios.get(url))
         );
@@ -66,18 +66,18 @@ function Favorites() {
           characterUrls.map((url) => axios.get(url))
         );
 
-        // Extraire les données des réponses
+        // Ge dat from request
         const comicResults = comicResponses.map((response) => response.data);
 
         const characterResults = characterResponses.map(
           (response) => response.data
         );
 
-        // Mettre à jour votre state avec les données récupérées
+        // update each state
         setComicsData(comicResults);
         setCharactersData(characterResults);
 
-        // Désactiver le chargement
+        //isLoading => false
         setIsLoading(false);
 
         //
