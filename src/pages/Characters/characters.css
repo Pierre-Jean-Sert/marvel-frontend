@@ -220,6 +220,10 @@
   cursor: pointer;
 }
 
+.characters-bookmarks:hover {
+  background-color: #070707;
+}
+
 .characters-bookmarks > i {
   font-size: 18px;
   color: #ed3237;

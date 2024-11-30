@@ -82,7 +82,7 @@ function Comics() {
   return (
     <>
       <main className="comics-main">
-        {/* Title and search bar */}
+        {/* Title */}
         <section className="comics-header-section">
           <h2>COMICS</h2>
         </section>
@@ -99,7 +99,7 @@ function Comics() {
                   <input
                     id="search"
                     type="text"
-                    placeholder="SEARCH"
+                    placeholder="RECHERCHER..."
                     onChange={(event) => {
                       setSearch(event.target.value);
                     }}
@@ -119,7 +119,7 @@ function Comics() {
                       }
                     }}
                   >
-                    Previous
+                    <i className="fa-solid fa-chevron-left"></i>
                   </button>
                   <p>Page {page[0]}</p>
                   <button
@@ -133,7 +133,7 @@ function Comics() {
                       }
                     }}
                   >
-                    Next
+                    <i className="fa-solid fa-chevron-right"></i>
                   </button>
                 </div>
               </div>

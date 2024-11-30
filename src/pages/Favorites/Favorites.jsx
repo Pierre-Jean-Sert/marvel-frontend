@@ -94,9 +94,8 @@ function Favorites() {
   return (
     <>
       <main className="favorites-main">
-        {/* Title */}
+        {/* Button */}
         <section className="favorites-header-section">
-          <h2>MES FAVORIS</h2>
           <button
             onClick={() => {
               Cookies.remove("comicBookmarks");
@@ -109,59 +108,71 @@ function Favorites() {
         </section>
 
         <section className="favorites-section">
-          <h3>Comics</h3>
           {isLoading ? (
             <p>En cours de chargement...</p>
           ) : (
             <>
-              {/* Comics */}
-              <div className="favorites-list">
-                {comicsData.map((comic) => {
-                  //
-                  // Img URL constructor ; size = standard_medium
-                  const imgSrc =
-                    comic.thumbnail.path +
-                    "/" +
-                    "standard_xlarge" +
-                    "." +
-                    comic.thumbnail.extension;
+              <h3>Comics</h3>
+              {comicBookmarks.length === 0 ? (
+                <p>Aucun comic favoris</p>
+              ) : (
+                <>
+                  {/* Comics */}
+                  <div className="favorites-list">
+                    {comicsData.map((comic) => {
+                      //
+                      // Img URL constructor ; size = standard_medium
+                      const imgSrc =
+                        comic.thumbnail.path +
+                        "/" +
+                        "standard_xlarge" +
+                        "." +
+                        comic.thumbnail.extension;
 
-                  //Return
-                  return (
-                    <>
-                      <div className="favorites-bloc">
-                        <h3>{comic.title}</h3>
-                        <img src={imgSrc} alt="Comic image" />
-                      </div>
-                    </>
-                  );
-                })}
-              </div>
+                      //Return
+                      return (
+                        <>
+                          <div className="favorites-bloc">
+                            <h3>{comic.title}</h3>
+                            <img src={imgSrc} alt="Comic image" />
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
 
               <h3>Personnages</h3>
-              {/* Characters */}
-              <div className="favorites-list">
-                {charactersData.map((comic) => {
-                  //
-                  // Img URL constructor ; size = standard_medium
-                  const imgSrc =
-                    comic.thumbnail.path +
-                    "/" +
-                    "standard_xlarge" +
-                    "." +
-                    comic.thumbnail.extension;
+              {characterBookmarks.length === 0 ? (
+                <p>Aucun personnage favoris</p>
+              ) : (
+                <>
+                  {/* Characters */}
+                  <div className="favorites-list">
+                    {charactersData.map((comic) => {
+                      //
+                      // Img URL constructor ; size = standard_medium
+                      const imgSrc =
+                        comic.thumbnail.path +
+                        "/" +
+                        "standard_xlarge" +
+                        "." +
+                        comic.thumbnail.extension;
 
-                  //Return
-                  return (
-                    <>
-                      <div className="favorites-bloc">
-                        <h3>{comic.name}</h3>
-                        <img src={imgSrc} alt="Comic image" />
-                      </div>
-                    </>
-                  );
-                })}
-              </div>
+                      //Return
+                      return (
+                        <>
+                          <div className="favorites-bloc">
+                            <h3>{comic.name}</h3>
+                            <img src={imgSrc} alt="Comic image" />
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
             </>
           )}
         </section>

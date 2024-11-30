@@ -85,7 +85,7 @@ function Characters() {
       <main className="characters-main">
         {/* Title */}
         <section className="characters-header-section">
-          <h2>CHARACTERS</h2>
+          <h2>PERSONNAGES</h2>
         </section>
 
         {isLoading ? (
@@ -100,7 +100,7 @@ function Characters() {
                   <input
                     id="search"
                     type="text"
-                    placeholder="SEARCH"
+                    placeholder="RECHERCHER..."
                     onChange={(event) => {
                       setSearch(event.target.value);
                     }}
@@ -120,7 +120,7 @@ function Characters() {
                       }
                     }}
                   >
-                    Previous
+                    <i className="fa-solid fa-chevron-left"></i>
                   </button>
                   <p>Page {page[0]}</p>
                   <button
@@ -134,7 +134,7 @@ function Characters() {
                       }
                     }}
                   >
-                    Next
+                    <i className="fa-solid fa-chevron-right"></i>
                   </button>
                 </div>
               </div>

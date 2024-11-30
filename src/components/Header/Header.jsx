@@ -26,7 +26,7 @@ function Header() {
       {/* Home */}
       <Link to="/">
         <div className="special">
-          <p>Home</p>
+          <p>Accueil</p>
         </div>
       </Link>
 
@@ -40,7 +40,7 @@ function Header() {
       {/* Characters */}
       <Link to="/characters">
         <div className="special">
-          <p>Characters</p>
+          <p>Personnages</p>
         </div>
       </Link>
 
@@ -52,14 +52,14 @@ function Header() {
       {/* Favorites */}
       <Link to="/favorites">
         <div className="special">
-          <p>Favorites</p>
-        </div>{" "}
+          <p>Mes favoris</p>
+        </div>
       </Link>
 
       {/* Signup and Login */}
       <div className="connection">
-        <button>Signup</button>
-        <button>Login</button>
+        <button>S'inscrire</button>
+        <button>Se connecter</button>
       </div>
     </header>
   );

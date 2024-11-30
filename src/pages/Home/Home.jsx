@@ -15,8 +15,8 @@ function Home() {
   return (
     <main className="home-main">
       <div className="home-title">
-        <h1>Welcome to the Marvel website</h1>
-        <p>Find your favorite comics and characters</p>
+        <h1>Bienvenue sur le site de Marvel</h1>
+        <p>Vous retrouverez ici vos comics et personnages préférés !</p>
       </div>
 
       <Link to="/comics">
@@ -27,13 +27,13 @@ function Home() {
 
       <Link to="/characters">
         <section className="characters-home-section">
-          <h2>CHARACTERS</h2>
+          <h2>PERSONNAGES</h2>
         </section>{" "}
       </Link>
 
-      <Link to="/">
+      <Link to="/favorites">
         <section className="favorites-home-section">
-          <h2>FAVORITES</h2>
+          <h2>MES FAVORIS</h2>
         </section>{" "}
       </Link>
     </main>
